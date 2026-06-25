@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { HistoryApp } from "../components/HistoryApp";
+---
+
+<Layout
+  title="Session history — Unspin"
+  description="Your locally stored Unspin positioning sessions."
+  path="/history/"
+>
+  <HistoryApp client:load />
+</Layout>

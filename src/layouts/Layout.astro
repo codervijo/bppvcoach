@@ -1,0 +1,63 @@
+---
+// Shared app shell — ported from genai/src/routes/__root.tsx <head>.
+import "../styles/global.css";
+
+const site = "https://bppvcoach.com";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Route path with leading + trailing slash, e.g. "/session/". Home is "/". */
+  path?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const {
+  title,
+  description,
+  path = "/",
+  ogTitle = title,
+  ogDescription = description,
+} = Astro.props;
+
+// Canonical MUST match the served URL incl. trailing slash (trailingSlash:
+// 'always' in astro.config.mjs).
+const canonical = `${site}${path}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0f3b46" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonical} />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

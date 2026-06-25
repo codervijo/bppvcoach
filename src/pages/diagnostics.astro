@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { DiagnosticsApp } from "../components/DiagnosticsApp";
+---
+
+<Layout
+  title="Sensor diagnostics — Unspin"
+  description="Developer view of raw sensor data and device capability."
+  path="/diagnostics/"
+>
+  <!-- client:only — renders device-capability values that only exist in the
+       browser, so SSR would produce a hydration mismatch. -->
+  <DiagnosticsApp client:only="react" />
+</Layout>

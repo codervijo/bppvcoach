@@ -1,19 +1,27 @@
 ---
-// src/pages/index.astro
+// src/pages/index.astro — homepage. Kept as a self-contained document (not the
+// shared Layout) so the SEO baseline tags live directly in this file, which is
+// what src/__tests__/seo.test.js (CHECK_161 regression) asserts against.
+import "../styles/global.css";
+import { Landing } from "../components/Landing";
+
 const site = "https://bppvcoach.com";
-const title = "bppvcoach.com";
-const description = "<fill in: 1-2 sentence value prop for SEO description>";
+const title = "Unspin — Guided positioning for your prescribed Epley maneuver";
+const description =
+  "Sensor-guided head-positioning companion for adults previously diagnosed with posterior-canal BPPV. Educational only — not a diagnostic tool.";
 // Canonical MUST match the served URL incl. trailing slash (trailingSlash:
-// 'always' in astro.config.mjs). For a sub-page, derive it the same way:
-//   const canonical = `${site}/<route>/`;   // e.g. `${site}/about/`
-// A no-slash canonical 308-redirects and breaks indexing (CHECK_161).
+// 'always' in astro.config.mjs).
 const canonical = `${site}/`;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0f3b46" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -21,43 +29,51 @@ const canonical = `${site}/`;
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content="Unspin — Guided Epley positioning" />
+    <meta
+      property="og:description"
+      content="Real-time head positioning feedback for a previously prescribed Epley maneuver."
+    />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="bppvcoach.com" />
+    <meta property="og:site_name" content="Unspin" />
 
     <!-- Twitter card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Unspin — Guided Epley positioning" />
+    <meta
+      name="twitter:description"
+      content="Real-time head positioning feedback for a previously prescribed Epley maneuver."
+    />
 
-    <!-- JSON-LD structured data: Organization + WebSite (static; domain
-         is known at scaffold time. Update description by hand if needed.) -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://bppvcoach.com/#organization",
-      "name": "bppvcoach.com",
-      "url": "https://bppvcoach.com/"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://bppvcoach.com/#website",
-      "url": "https://bppvcoach.com/",
-      "name": "bppvcoach.com",
-      "publisher": { "@id": "https://bppvcoach.com/#organization" }
-    }
-  ]
-}
-    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- JSON-LD structured data: Organization + WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://bppvcoach.com/#organization",
+          "name": "Unspin",
+          "url": "https://bppvcoach.com/",
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bppvcoach.com/#website",
+          "url": "https://bppvcoach.com/",
+          "name": "Unspin",
+          "publisher": { "@id": "https://bppvcoach.com/#organization" },
+        },
+      ],
+    })} />
   </head>
   <body>
-    <main>
-      <h1>{title}</h1>
-      <p>Scaffolded via <code>portfolio new bootstrap</code>.</p>
-    </main>
+    <Landing />
   </body>
 </html>

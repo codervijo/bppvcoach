@@ -1,6 +1,9 @@
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
+import { fileURLToPath } from 'node:url';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://bppvcoach.com',
@@ -11,6 +14,15 @@ export default defineConfig({
   // back "URL is unknown to Google". Make it explicit so every page's
   // canonical matches its served URL. Enforced by CHECK_161.
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  // @astrojs/react renders the ported React islands; @tailwindcss/vite is the
+  // Tailwind v4 toolchain the source uses (styles.css does `@import "tailwindcss"`).
+  integrations: [sitemap(), react()],
   output: 'static',
+  vite: {
+    plugins: [tailwindcss()],
+    resolve: {
+      // Mirror the source's `@/*` -> `src/*` path alias so ported imports resolve.
+      alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+    },
+  },
 });
