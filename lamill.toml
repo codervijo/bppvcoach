@@ -1,0 +1,53 @@
+# lamill.toml — per-site config consumed by lamill (portfolio/ops) and rankmill (content/audits).
+# [content] = stable identity, authored by hand. [todo] = volatile work state.
+# rankmill output lives in sites/<domain>/rankmill-output/, not here.
+
+schema = "lamill-toml-v1"
+
+[deploy]
+platform = "cf-pages"
+production_branch = "main"
+custom_domains = [
+    "bppvcoach.com",
+]
+
+[index]
+indexnow_key = "fe7329f555b5bd10428a1bcdf9a0dcc7"
+indexnow_enabled = true
+
+[stack]
+framework = "astro"
+
+# Tracked todos for bppvcoach.com. status: "done" | "open".
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Check SEO: GSC indexation + coverage (revisit ~2026-07-08)"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Verify GA4 is receiving data (check Realtime after first traffic)"
+
+[[todo]]
+status = "open"
+priority = "low"
+task = "Confirm GSC verification + sitemap submitted (re-run deploy if it timed out)"
+
+[content]
+# Declarative content identity for this site.
+# Authored by the human; consumed by rankmill to generate drafts and run audits.
+# Leave fields empty until you have a deliberate answer. Empty is better than wrong.
+site_type = "tool"
+primary_keyword = "how do I know I'm at 45 degrees for Epley"
+secondary_keywords = [
+    "how to know if the Epley worked",
+    "BPPV keeps coming back",
+    "how do I know I'm at 90 degrees for Epley",
+    "how do I know I'm at the Epley reference angles",
+]
+icp = "Has had BPPV diagnosed or confirmed by a clinician at least once, so they already know the term and know their affected side from a prior PT or ENT visit. Episodes recur every few months. Comfortable enough with a phone to use a sensor tool, and already swapping maneuver videos in vertigo communities. Explicitly NOT the target: undiagnosed first-timers and people mid-attack — both are routed, in-product, to see a clinician (the tool never diagnoses which canal or which side, and never tells anyone to perform a maneuver)."
+urgency_trigger = "wanting to ensure correct head angles so a self-administered Epley works next time / to be prepared before the next BPPV episode"
+penalty = "missed angles mean failed home maneuvers and continued recurring vertigo episodes"
+tone = "clinical, educational, non-promotional"
+law = ""                  # statute or regulation if applicable, else empty
