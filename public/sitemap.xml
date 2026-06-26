@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @astrojs/sitemap emits sitemap-index.xml + sitemap-0.xml (it never names a
+  file "sitemap.xml"). But crawlers and tools probe the conventional
+  /sitemap.xml, and our Cloudflare not_found_handling=single-page-application
+  serves index.html (text/html, 200) for any missing path. So a request for
+  the conventional URL came back as HTML, not a sitemap.
+
+  This static file IS the conventional entry point: a sitemap index that points
+  at the auto-generated sitemap-0.xml (the source of truth for the page list,
+  so this never drifts as pages are added/removed).
+-->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://bppvcoach.com/sitemap-0.xml</loc>
+  </sitemap>
+</sitemapindex>
