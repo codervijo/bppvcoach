@@ -100,7 +100,7 @@ function SafetyPhase({
           Before you begin
         </div>
         <p className="mt-2 text-base leading-relaxed">
-          Unspin does not diagnose vertigo or replace a clinician. Use it only
+          BPPVCoach does not diagnose vertigo or replace a clinician. Use it only
           for a maneuver previously recommended for you.
         </p>
       </div>
@@ -166,7 +166,7 @@ function Blocked() {
       <div className="rounded-2xl border border-destructive/40 bg-destructive/10 p-5">
         <div className="text-lg font-semibold">Please seek medical evaluation</div>
         <p className="mt-2 text-sm leading-relaxed">
-          Based on your answers, Unspin is not the right tool for you right now.
+          Based on your answers, BPPVCoach is not the right tool for you right now.
           The symptoms or history you indicated should be evaluated by a
           qualified clinician before performing any positioning maneuver. If you
           have urgent symptoms such as weakness, speech difficulty, severe
@@ -188,7 +188,7 @@ function EarPhase({ onPick }: { onPick: (e: Ear) => void }) {
       <div>
         <div className="text-base font-semibold">Which side did your clinician identify?</div>
         <p className="mt-1 text-sm text-muted-foreground">
-          Choose the side previously identified by your clinician. Unspin does
+          Choose the side previously identified by your clinician. BPPVCoach does
           not determine which canal is affected.
         </p>
       </div>
@@ -323,7 +323,7 @@ function CalibratePhase({
         <div className="rounded-2xl border bg-card p-5">
           <div className="text-base font-semibold">Allow motion access</div>
           <p className="mt-1 text-sm text-muted-foreground">
-            Unspin needs access to your phone’s motion sensors to provide live
+            BPPVCoach needs access to your phone’s motion sensors to provide live
             positioning feedback. The data stays on your device.
           </p>
         </div>
@@ -660,7 +660,7 @@ function CompletionPhase({ ear }: { ear: Ear }) {
   function commit() {
     // Update the most recent session record with symptoms.
     try {
-      const KEY = "unspin.sessions.v1";
+      const KEY = "bppvcoach.sessions.v1";
       const raw = localStorage.getItem(KEY);
       const arr = raw ? JSON.parse(raw) : [];
       if (arr.length) {

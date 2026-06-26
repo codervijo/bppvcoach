@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Unspin — Guided positioning for your prescribed Epley maneuver" },
+      { title: "BPPVCoach — Guided positioning for your prescribed Epley maneuver" },
       {
         name: "description",
         content:
           "Sensor-guided head-positioning companion for adults previously diagnosed with posterior-canal BPPV. Educational only — not a diagnostic tool.",
       },
-      { property: "og:title", content: "Unspin — Guided Epley positioning" },
+      { property: "og:title", content: "BPPVCoach — Guided Epley positioning" },
       {
         property: "og:description",
         content:
@@ -50,7 +50,7 @@ function Landing() {
         </div>
 
         <p className="mt-6 rounded-2xl border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
-          <strong className="text-foreground">Important.</strong> Unspin does
+          <strong className="text-foreground">Important.</strong> BPPVCoach does
           not diagnose vertigo or replace a clinician. Use it only for a
           maneuver previously recommended for you. Stop and seek urgent care for
           new weakness, numbness, speech difficulty, fainting, severe headache,

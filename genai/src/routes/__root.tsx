@@ -78,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#0f3b46" },
-      { title: "Unspin — Guided Epley positioning" },
+      { title: "BPPVCoach — Guided Epley positioning" },
       {
         name: "description",
         content:
           "Sensor-guided head-positioning companion for adults with previously diagnosed posterior-canal BPPV. Educational only — not a diagnostic tool.",
       },
-      { property: "og:title", content: "Unspin — Guided Epley positioning" },
+      { property: "og:title", content: "BPPVCoach — Guided Epley positioning" },
       {
         property: "og:description",
         content:

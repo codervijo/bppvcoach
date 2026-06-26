@@ -13,7 +13,7 @@ export interface SessionRecord {
   outcome?: "better" | "unchanged" | "worse";
 }
 
-const KEY = "unspin.sessions.v1";
+const KEY = "bppvcoach.sessions.v1";
 
 export function loadSessions(): SessionRecord[] {
   if (typeof localStorage === "undefined") return [];

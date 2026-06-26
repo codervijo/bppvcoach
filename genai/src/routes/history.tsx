@@ -7,8 +7,8 @@ import { clearSessions, loadSessions, type SessionRecord } from "@/lib/storage";
 export const Route = createFileRoute("/history")({
   head: () => ({
     meta: [
-      { title: "Session history — Unspin" },
-      { name: "description", content: "Your locally stored Unspin positioning sessions." },
+      { title: "Session history — BPPVCoach" },
+      { name: "description", content: "Your locally stored BPPVCoach positioning sessions." },
     ],
   }),
   component: History,

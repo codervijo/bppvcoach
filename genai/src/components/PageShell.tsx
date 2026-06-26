@@ -18,7 +18,7 @@ export function PageShell({
             <span className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground font-bold">
               U
             </span>
-            <span className="text-lg font-semibold tracking-tight">Unspin</span>
+            <span className="text-lg font-semibold tracking-tight">BPPVCoach</span>
           </Link>
           {back ? (
             <Link to={back.to} className="text-sm text-muted-foreground hover:text-foreground">

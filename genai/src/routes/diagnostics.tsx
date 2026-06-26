@@ -7,7 +7,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/diagnostics")({
   head: () => ({
     meta: [
-      { title: "Sensor diagnostics — Unspin" },
+      { title: "Sensor diagnostics — BPPVCoach" },
       { name: "description", content: "Developer view of raw sensor data and device capability." },
     ],
   }),

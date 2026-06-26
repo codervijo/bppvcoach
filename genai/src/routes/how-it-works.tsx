@@ -4,11 +4,11 @@ import { PageShell } from "@/components/PageShell";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How Unspin works" },
+      { title: "How BPPVCoach works" },
       {
         name: "description",
         content:
-          "How Unspin uses phone motion sensors to guide a previously prescribed Epley maneuver.",
+          "How BPPVCoach uses phone motion sensors to guide a previously prescribed Epley maneuver.",
       },
     ],
   }),
@@ -26,7 +26,7 @@ function HowItWorks() {
           },
           {
             t: "Select the affected ear",
-            d: "Pick the side your clinician previously identified. Unspin does not determine which canal is affected.",
+            d: "Pick the side your clinician previously identified. BPPVCoach does not determine which canal is affected.",
           },
           {
             t: "Secure your phone",
@@ -62,7 +62,7 @@ function HowItWorks() {
       <div className="mt-8 rounded-2xl border border-warning/40 bg-warning/10 p-5 text-sm">
         <div className="font-semibold">Not a clinical device</div>
         <p className="mt-1 text-muted-foreground">
-          Unspin provides positioning feedback only and does not claim
+          BPPVCoach provides positioning feedback only and does not claim
           clinical-grade accuracy. It does not diagnose vertigo, determine which
           canal is affected, or treat any condition.
         </p>

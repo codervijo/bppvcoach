@@ -29,7 +29,7 @@ export function Landing() {
         </div>
 
         <p className="mt-6 rounded-2xl border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
-          <strong className="text-foreground">Important.</strong> Unspin does
+          <strong className="text-foreground">Important.</strong> BPPVCoach does
           not diagnose vertigo or replace a clinician. Use it only for a
           maneuver previously recommended for you. Stop and seek urgent care for
           new weakness, numbness, speech difficulty, fainting, severe headache,
