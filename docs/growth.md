@@ -57,10 +57,10 @@ https://search.google.com/search-console directly.
 ---
 
 ## 2026-06-24 — Recurring sufferers searching low-authority long-tail land on a tool…
-- **Status:** active
+- **Status:** testing
 - **Hypothesis:** Recurring sufferers searching low-authority long-tail land on a tool that does the one thing videos can't — live angle confirmation — earning bookmarks and backlinks (PT patient handouts, Reddit recommendations) that static content can't. Email captured in the calm period owns the channel for the urgent period, and the next-episode return visit becomes the eventual monetization moment (telehealth referral) once that layer is built. Because BPPV recurs for years, the returning-user base compounds at near-zero reacquisition cost.
 - **KPI:** any GSC traffic — clicks, impressions, indexed-page count
 - **Baseline:** 0 clicks / 0 impressions (just deployed)
 - **Action:** project scaffolded via `portfolio new bootstrap`; first deploy pending. After deploy: verify in GSC as `sc-domain:bppvcoach.com` and submit the sitemap.
-- **Result:** TBD — review 2026-07-22
-- **Learning:** TBD
+- **Result:** Reviewed late, 2026-09-17 (GSC snapshot 2026-09-13, SEO snapshot 2026-09-18): 0 clicks, 4 impressions, avg position 1.75. 4 of 5 sitemap URLs indexed (`/`, `/diagnostics/`, `/how-it-works/`, `/session/`); `/history/` discovered, not indexed. Sitemap errored at the 2026-06-25 fetch, clean at the 2026-09-14 fetch.
+- **Learning:** Indexing works. Traffic is near zero because only tool pages exist; no long-tail content pages yet. The sitemap error likely delayed crawling for ~2.5 months. Next bet: long-tail content pages (PRD v1.B). Extending to review 2026-10-15.

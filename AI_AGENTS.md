@@ -88,7 +88,7 @@ docker exec -w /usr/src/app <name> make test proj=bppvcoach.com
   (avoids the bun-detection trap kwizicle.com hit). Idempotent; safe to re-run.
 - **Vite version:** must be ≥ 6.0.0 — Wrangler's Vite integration rejects Vite 5.
 - **Env vars:** set `VITE_*` vars (e.g. `VITE_GA_ID`) in the Cloudflare Workers project's environment-variable settings — they're inlined at build time.
-- **Live URL:** https://bppvcoach.com/  *(update once first deploy succeeds)*
+- **Live URL:** https://bppvcoach.com/ — live (200, verified 2026-09-17).
 - **Canonical host:** the **apex** (`https://bppvcoach.com/`) is the ONLY canonical host fleet-wide — `www` and `http` must 308→apex, and there is no `www`-canonical option. Set Astro's `site: "https://bppvcoach.com"` (apex, never `www`) so every `<link rel="canonical">` and the generated sitemap `<loc>` URLs use the apex. Enforced by CHECK_150 (redirect) + CHECK_158 (canonical tags) + CHECK_159 (sitemap) + CHECK_160 (GSC-registered sitemap).
 - **Legacy:** if a `vercel.json` or `.vercelignore` is present from a Lovable export, it's inert on Cloudflare and safe to delete.
 
@@ -100,10 +100,16 @@ Tool-as-answer for the specific long-tail queries the tool literally resolves �
 
 ### Post-deploy checklist (do these once after the first successful deploy)
 
-- [ ] Verify in **Google Search Console** at https://search.google.com/search-console — add as `sc-domain:bppvcoach.com` property; verify via DNS TXT record. Until this is done, no SEO traffic data is observable for this site (and the workspace-wide `30 commercial sites with traffic` goal can't credit it).
-- [ ] Submit the sitemap (`https://bppvcoach.com/sitemap-index.xml` — the apex host; `@astrojs/sitemap` emits `-index`, not `/sitemap.xml`) inside GSC. *(The deploy pipeline auto-submits the robots.txt-declared sitemap; this is the manual fallback.)*
-- [ ] Update the **Live URL** above with the actual deploy URL.
+- [x] Verify in **Google Search Console** at https://search.google.com/search-console — add as `sc-domain:bppvcoach.com` property; verify via DNS TXT record. Until this is done, no SEO traffic data is observable for this site (and the workspace-wide `30 commercial sites with traffic` goal can't credit it).
+- [x] Submit the sitemap (`https://bppvcoach.com/sitemap-index.xml` — the apex host; `@astrojs/sitemap` emits `-index`, not `/sitemap.xml`) inside GSC. *(The deploy pipeline auto-submits the robots.txt-declared sitemap; this is the manual fallback.)*
+- [x] Update the **Live URL** above with the actual deploy URL.
 - [ ] Run `make run ARGS="cleanup"` from `sites/portfolio/` so `data/portfolio.json` reflects the new project's state (and `project status bppvcoach.com` resolves cleanly).
+
+Live state (from `sites/portfolio/data/`, GSC snapshot 2026-09-13 + SEO snapshot 2026-09-18):
+
+- GSC property `sc-domain:bppvcoach.com` registered. Registered sitemap is `/sitemap.xml` (not `-index`); errored at its 2026-06-25 fetch, 0 errors at its 2026-09-14 fetch (after `cc777bf`).
+- Indexed: `/`, `/diagnostics/`, `/how-it-works/`, `/session/`. `/history/` = "Discovered – currently not indexed".
+- GSC totals (window as reported by `portfolio gsc sync`): 0 clicks, 4 impressions, avg position 1.75.
 
 ## How to run
 
