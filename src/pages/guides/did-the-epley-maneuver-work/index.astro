@@ -1,0 +1,144 @@
+---
+import Guide from "../../../layouts/Guide.astro";
+
+const faq = [
+  {
+    q: "Is it normal to still feel dizzy after the Epley maneuver?",
+    a: "Yes. Nausea is the most common side effect, and a general off-balance or light-headed feeling can last after the spinning is gone. What matters is the brief, violent spinning when you lie down, roll over, or look up. If that has stopped, the maneuver has probably done its job, even if you still feel unsteady.",
+  },
+  {
+    q: "How long after the Epley maneuver should I feel better?",
+    a: "Many people notice relief right away; for others it takes a few days. Cleveland Clinic notes that at home it may take repeating the maneuver up to three times a day for several days.",
+  },
+  {
+    q: "What if the Epley maneuver made my vertigo worse?",
+    a: "Being more dizzy for a short time right after is common. If the spinning episodes are more frequent or different in character a day later, or if you have any new neurological symptom, stop and contact a clinician. Crystals can occasionally move into a different canal, which needs a different maneuver [VERIFY].",
+  },
+  {
+    q: "Do I need to sleep upright after the Epley maneuver?",
+    a: "The US clinical practice guideline recommends against post-procedure posture restrictions such as sleeping upright after the maneuver for posterior-canal BPPV.",
+  },
+  {
+    q: "Can I do the Epley maneuver on both sides?",
+    a: "It is done on the affected side. Doing both sides \"to be safe\" is a common home approach, but whether and when that's appropriate is a clinician's call — the maneuver on one side is not a neutral movement for the other ear [VERIFY].",
+  },
+  {
+    q: "How many times can I try before I should see someone?",
+    a: "If you've done it several times over a few days with no change in the positional spinning, stop repeating it and see a clinician [VERIFY]. It may not be posterior-canal BPPV, or it may be the other side.",
+  },
+];
+
+const sources = [
+  { label: "Cleveland Clinic. Epley Maneuver (Canalith Repositioning Procedure).", href: "https://my.clevelandclinic.org/health/treatments/17930-canalith-repositioning-procedure-crp" },
+  { label: "Nguyen C-T, Basso M. Epley Maneuver. StatPearls (NCBI Bookshelf), updated 2024-09-10.", href: "https://www.ncbi.nlm.nih.gov/books/NBK563287/" },
+  { label: "Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update). Otolaryngol Head Neck Surg. 2017;156(3_suppl):S1–S47.", href: "https://pubmed.ncbi.nlm.nih.gov/28248609/" },
+];
+---
+
+<Guide
+  title="Did the Epley Maneuver Work? How to Tell, and What Next"
+  description="How to tell if the Epley maneuver worked: which dizziness should stop, which leftover feelings are normal, and when repeating it isn't the answer."
+  path="/guides/did-the-epley-maneuver-work/"
+  faq={faq}
+  sources={sources}
+>
+  <p class="answer">
+    The Epley maneuver worked if the movements that used to set off brief, intense spinning — lying
+    down, rolling over in bed, tipping your head back — no longer do. Many people notice this right
+    away; for others it takes a few days.<cite><a href="#src-1">[1]</a></cite> A lingering off-balance
+    or queasy feeling is common afterwards and doesn't mean it failed. Positional spinning that hasn't
+    changed after several attempts does.
+  </p>
+
+  <h2>Two different kinds of dizzy</h2>
+  <p>
+    Most confusion about whether it worked comes from treating all dizziness as the same thing. BPPV
+    produces a very specific pattern, and that pattern is the one to judge by.
+  </p>
+  <table>
+    <thead>
+      <tr><th></th><th>Positional spinning (the BPPV)</th><th>Leftover unsteadiness</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Feels like</td><td>The room spins</td><td>Off-balance, woozy, "not quite right"</td></tr>
+      <tr><td>Triggered by</td><td>Specific head movements: lying back, rolling to one side, looking up</td><td>Nothing specific, or general movement</td></tr>
+      <tr><td>Lasts</td><td>Seconds, then fades while you stay still</td><td>Can hang around for hours or days</td></tr>
+      <tr><td>After a successful maneuver</td><td>Gone, or much weaker</td><td>Often still there for a while</td></tr>
+    </tbody>
+  </table>
+  <p>
+    If the left column has changed, that is the result you were after. The right column is common
+    after the crystals have been moved, and nausea is the most frequently reported side effect of the
+    maneuver itself.<cite><a href="#src-2">[2]</a></cite> It usually settles on its own
+    <mark>[VERIFY]</mark>.
+  </p>
+
+  <h2>How clinicians check, and what you can check at home</h2>
+  <p>
+    In a clinic, success is judged by repeating the positional test and looking for the eye movement
+    (nystagmus) that BPPV causes.<cite><a href="#src-2">[2]</a></cite> You can't see your own eyes
+    mid-spin, so at home the practical measure is the trigger: does the movement that reliably set it
+    off before still do it? Notice it during normal life — getting into bed, rolling over, reaching up
+    to a high shelf — rather than repeatedly provoking it to test.
+  </p>
+
+  <h2>Why a correctly followed maneuver can still fail</h2>
+  <ul>
+    <li>
+      <strong>The angles weren't reached.</strong> A turn that's short of 45°, or a head that isn't
+      tipped back far enough, moves the crystals less effectively. This is the most fixable cause.
+      See <a href="/guides/epley-maneuver-angles/">Epley maneuver angles</a>.
+    </li>
+    <li>
+      <strong>Wrong side.</strong> The maneuver is side-specific. If the affected side was guessed
+      rather than identified by a clinician, the maneuver may have been done on the wrong ear.
+    </li>
+    <li>
+      <strong>Wrong canal.</strong> Epley is for the posterior canal. The horizontal (lateral) canal
+      form uses different maneuvers.
+    </li>
+    <li>
+      <strong>Not BPPV.</strong> Vestibular migraine, vestibular neuritis and other conditions can
+      cause dizziness with head movement, and repositioning doesn't help them <mark>[VERIFY]</mark>.
+    </li>
+    <li>
+      <strong>It needs more than one round.</strong> It's common to need to repeat it; Cleveland
+      Clinic notes up to three times a day for several days at home.<cite><a href="#src-1">[1]</a></cite>
+      Overall it helps about 8 in 10 people.<cite><a href="#src-1">[1]</a></cite>
+    </li>
+  </ul>
+
+  <h2>Examples</h2>
+  <h3>Worked, but still woozy</h3>
+  <p>
+    The spinning when lying down on the left stops after the second round. For the next two days
+    there's a vague unsteadiness walking around, but rolling onto the left side in bed no longer
+    triggers anything. That's a success — the positional trigger is gone. The unsteadiness is the
+    right-hand column in the table above.
+  </p>
+  <h3>Partly worked</h3>
+  <p>
+    The spinning still happens but is shorter and milder. That's usually a reason to repeat the
+    maneuver as your clinician advised rather than to give up <mark>[VERIFY]</mark>. It's also the
+    case where checking your angles is most useful: a partial result is consistent with positions
+    that were close but short.
+  </p>
+  <h3>Didn't work</h3>
+  <p>
+    Several careful rounds over a few days, and lying back still sets off the same spinning as
+    before. Keep repeating it and you're only repeating the same thing. Stop and see a clinician.
+    The side, the canal, or the diagnosis may be different from what you assumed, and the US
+    clinical guideline recommends reassessing people whose symptoms don't resolve
+    <mark>[VERIFY]</mark>.<cite><a href="#src-3">[3]</a></cite>
+  </p>
+
+  <div class="callout">
+    <p style="margin-top:0">
+      BPPVCoach can't tell you whether the maneuver worked — that's the trigger test above, and your
+      clinician. It records a symptom rating before and after each session on your device, so you can
+      see whether the positional spinning is changing across attempts, and it shows whether each
+      lying position was actually held at the reference angle.
+    </p>
+    <p><a href="/session/">Start a guided session</a> · <a href="/history/">Your session history</a></p>
+  </div>
+</Guide>

@@ -1,0 +1,43 @@
+---
+// /guides/ hub — lists every guide from src/lib/guides.mjs. noindex while no
+// guide has been clinician-reviewed (it would be a thin page of drafts).
+import Layout from "../../layouts/Layout.astro";
+import { guides } from "../../lib/guides.mjs";
+
+const anyReviewed = guides.some((g) => g.reviewed);
+---
+
+<Layout
+  title="BPPV and Epley Maneuver Guides | BPPVCoach"
+  description="Plain-language guides for people who already know they have BPPV: Epley angles, telling whether it worked, and why it comes back."
+  path="/guides/"
+  noindex={!anyReviewed}
+>
+  <div class="min-h-screen bg-background text-foreground">
+    <header class="sticky top-0 z-10 border-b bg-background/85 backdrop-blur">
+      <div class="mx-auto flex max-w-2xl items-center justify-between px-4 py-3">
+        <a href="/" class="flex items-center gap-2">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground font-bold">B</span>
+          <span class="text-lg font-semibold tracking-tight">BPPVCoach</span>
+        </a>
+        <a href="/session/" class="text-sm text-muted-foreground hover:text-foreground">Guided session</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-2xl px-4 py-6 pb-24">
+      <h1 class="text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">Guides for recurring BPPV</h1>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        For people whose BPPV has already been diagnosed and who do the Epley maneuver at home on a
+        clinician's advice. These guides cover the questions that come up between episodes — not
+        diagnosis, and not whether you should do the maneuver.
+      </p>
+      <ul class="mt-8 space-y-4">
+        {guides.map((g) => (
+          <li class="rounded-2xl border bg-card p-5">
+            <a href={g.path} class="text-lg font-semibold hover:underline">{g.title}</a>
+            <p class="mt-1 text-sm text-muted-foreground">{g.blurb}</p>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </div>
+</Layout>

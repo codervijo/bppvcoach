@@ -11,6 +11,8 @@ interface Props {
   path?: string;
   ogTitle?: string;
   ogDescription?: string;
+  /** Keep the page out of search (e.g. unreviewed medical content). */
+  noindex?: boolean;
 }
 
 const {
@@ -19,6 +21,7 @@ const {
   path = "/",
   ogTitle = title,
   ogDescription = description,
+  noindex = false,
 } = Astro.props;
 
 // Canonical MUST match the served URL incl. trailing slash (trailingSlash:
@@ -37,6 +40,7 @@ const canonical = `${site}${path}`;
     <meta name="theme-color" content="#0f3b46" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -56,6 +60,7 @@ const canonical = `${site}${path}`;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
+    <slot name="head" />
   </head>
   <body>
     <slot />

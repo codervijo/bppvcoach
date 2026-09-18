@@ -1,0 +1,149 @@
+---
+import Guide from "../../../layouts/Guide.astro";
+
+const faq = [
+  {
+    q: "Is it normal for BPPV to keep coming back?",
+    a: "Yes. Recurrence is common. In one study that followed patients for a year after successful treatment, 26% had it come back. Studies with longer follow-up tend to find higher numbers.",
+  },
+  {
+    q: "Does it come back on the same side?",
+    a: "It often does, but not always [VERIFY]. A new episode can involve the other ear or a different canal, which is why a recurrence that feels different from the last one is worth having checked rather than treating it the same way.",
+  },
+  {
+    q: "Can vitamin D stop BPPV coming back?",
+    a: "In people whose vitamin D is low, studies reviewed in 2024 found supplementation reduced recurrences. That evidence is for people with low levels, not for people whose levels are already normal. Ask your doctor about testing before supplementing.",
+  },
+  {
+    q: "Can I prevent BPPV from recurring?",
+    a: "There's no reliable way to prevent it entirely. What you can control: treat any vitamin D deficiency, manage conditions your clinician links to it, and know your side and maneuver so you can act quickly when it returns.",
+  },
+  {
+    q: "Should I do the Epley maneuver every day to stop it coming back?",
+    a: "Not without a clinician's advice. The maneuver treats crystals that are already in the canal; doing it when you have no symptoms is not an established way to prevent the next episode [VERIFY].",
+  },
+];
+
+const sources = [
+  { label: "Dorigueto RS, Mazzetti KR, Gabilan YPL, Ganança FF. Benign paroxysmal positional vertigo recurrence and persistence. Braz J Otorhinolaryngol. 75(4):565–572 (year ‹VERIFY›).", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9446034/" },
+  { label: "Rhim G, Kim M-J. Vitamin D Supplementation and Recurrence of Benign Paroxysmal Positional Vertigo. Nutrients. 2024;16(5):689.", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10934290/" },
+  { label: "Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update). Otolaryngol Head Neck Surg. 2017;156(3_suppl):S1–S47.", href: "https://pubmed.ncbi.nlm.nih.gov/28248609/" },
+];
+---
+
+<Guide
+  title="BPPV Keeps Coming Back? Why It Recurs and How to Be Ready"
+  description="Why BPPV keeps coming back after the Epley maneuver, how often it recurs, what's linked to it, and how to be ready so the next episode is shorter."
+  path="/guides/bppv-keeps-coming-back/"
+  faq={faq}
+  sources={sources}
+>
+  <p class="answer">
+    BPPV keeps coming back because a treatment moves the loose crystals out of the canal but doesn't
+    stop more crystals from coming loose later. Recurrence is common: in one year-long follow-up after
+    successful treatment, 26% of patients had it return,<cite><a href="#src-1">[1]</a></cite> and
+    studies that follow people longer report higher rates. It's usually the same condition returning,
+    not a new or worse one — but a recurrence that feels different deserves a fresh check.
+  </p>
+
+  <h2>What's actually coming back</h2>
+  <p>
+    In BPPV, small calcium carbonate crystals (otoconia) that normally sit in one part of the inner
+    ear come loose and drift into one of the semicircular canals. Moving your head then moves them,
+    and your brain reads that as spinning. The Epley maneuver moves them back out of the posterior
+    canal. It doesn't reattach them or stop others from breaking loose, so another episode is
+    possible whenever more crystals drift into a canal <mark>[VERIFY]</mark>.
+  </p>
+
+  <h2>How often it recurs</h2>
+  <p>
+    Numbers vary a lot between studies, partly because of how long patients are followed.
+  </p>
+  <ul>
+    <li>
+      In a study that followed patients for one year after their BPPV cleared with treatment, it did
+      not recur in 70%, recurred in 26%, and persisted in 4%.<cite><a href="#src-1">[1]</a></cite>
+    </li>
+    <li>
+      The same authors note that published recurrence rates range from about 4% to 50%, and that the
+      longer patients are followed, the higher the proportion that recur.<cite><a href="#src-1">[1]</a></cite>
+    </li>
+  </ul>
+  <p>
+    So if yours has come back, you're in a large group, not an unusual one.
+  </p>
+
+  <h2>What's linked to it coming back</h2>
+  <p>
+    Research has looked at many possible risk factors. The one with the most direct evidence for doing
+    something about it is vitamin D.
+  </p>
+  <ul>
+    <li>
+      <strong>Low vitamin D.</strong> A 2024 review found that in BPPV patients with vitamin D
+      deficiency or insufficiency (below 30 ng/mL), supplementation reduced both the number of people
+      who relapsed and the number of relapses per person.<cite><a href="#src-2">[2]</a></cite> In one
+      of the trials it covered, recurrence fell from 46.7% to 37.8%.<cite><a href="#src-2">[2]</a></cite>
+      This applies to people who are deficient — it isn't evidence that extra vitamin D helps people
+      with normal levels.
+    </li>
+    <li>
+      <strong>Other factors studied</strong> include older age, female sex, head injury, and
+      conditions such as osteoporosis, diabetes and high blood pressure <mark>[VERIFY]</mark>. These
+      are associations from observational studies, and most aren't things you change for the sake of
+      your BPPV.
+    </li>
+  </ul>
+
+  <h2>Being ready for the next episode</h2>
+  <p>
+    Since you can't reliably prevent it, the useful thing is making the next episode shorter. Most of
+    that is done between episodes, while you're well:
+  </p>
+  <ol>
+    <li>
+      <strong>Know your side and your maneuver.</strong> Write down which ear and which maneuver your
+      clinician identified last time. Mid-episode is the worst time to work it out.
+    </li>
+    <li>
+      <strong>Know what "same as last time" means.</strong> Note what triggered it (lying back, rolling
+      left) and how long each spin lasted. If the next episode matches, you and your clinician have a
+      reference point. If it doesn't — other side, different trigger, spinning that lasts minutes
+      rather than seconds, or any new symptoms — get it checked rather than repeating the old plan.
+    </li>
+    <li>
+      <strong>Ask about vitamin D.</strong> If it hasn't been tested, ask whether it should be.<cite><a href="#src-2">[2]</a></cite>
+    </li>
+    <li>
+      <strong>Ask whether to rehearse the positions.</strong> Getting the angles right is much easier
+      to learn when turning your head doesn't make the room spin — but whether rehearsing between
+      episodes is appropriate for you is your clinician's call <mark>[VERIFY]</mark>. See
+      <a href="/guides/epley-maneuver-angles/">Epley maneuver angles</a>.
+    </li>
+  </ol>
+
+  <h2>Examples</h2>
+  <h3>Same side, same trigger</h3>
+  <p>
+    Eight months after a right-ear episode that cleared with the Epley maneuver, rolling onto the
+    right side in bed brings back the same short spin. It matches their notes from last time. Their
+    clinician had shown them the maneuver for that side, so they know what to do, and they know that
+    if it isn't better after a few rounds, the next step is an appointment.
+  </p>
+  <h3>A recurrence that isn't the same</h3>
+  <p>
+    Someone who's had left-sided episodes before now gets spinning when rolling either way, lasting
+    longer than it used to. Doing the usual left-ear maneuver would be treating the last episode, not
+    this one. A different pattern is a reason to be re-examined — it may be a different canal, the
+    other side, or something other than BPPV.
+  </p>
+
+  <div class="callout">
+    <p style="margin-top:0">
+      BPPVCoach is built for the time between episodes: if your clinician agrees, rehearse the
+      positions with live angle feedback while you're well, and keep a record on your device of each session and how your
+      symptoms changed, so the next episode starts with more to go on than memory.
+    </p>
+    <p><a href="/session/">Start a guided session</a> · <a href="/how-it-works/">How it works</a></p>
+  </div>
+</Guide>

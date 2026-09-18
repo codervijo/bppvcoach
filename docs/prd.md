@@ -51,19 +51,24 @@ Two-level versioning convention (canonical: `sites/portfolio/AI_AGENTS.md`):
 
 ## 5. Phases
 
-Order of v1.B / v1.C is not yet decided (see § 6).
+v1.B chosen first (2026-09-17).
 
 | Phase | Theme | Features | Status |
 |---|---|---|---|
 | **v0.A** | scaffolded | `portfolio new bootstrap` ran; standard files written; git initialized | ✅ |
 | **v1.A** | tool live | TanStack Start → static Astro port; `/` landing, `/session` (sensor-guided Epley, per-ear protocol in `src/lib/maneuvers.ts`, voice prompts), `/history` (localStorage session records), `/how-it-works`, `/diagnostics` (sensor check); `@astrojs/sitemap`; `/sitemap.xml` fix (`cc777bf`); GSC property verified | ✅ |
-| **v1.B** | long-tail content pages | static Astro pages for tool-as-answer queries ("how do I know I'm at 45 degrees for Epley", "how to know if the Epley worked", "BPPV keeps coming back"); diagnostic queries routed to a clinician | planned |
+| **v1.B** | long-tail content pages | `/guides/` hub + 3 static guides: `epley-maneuver-angles`, `did-the-epley-maneuver-work`, `bppv-keeps-coming-back`. Registry `src/lib/guides.mjs`; `reviewed: false` → `noindex` + excluded from sitemap. Not linked from existing pages yet | 🚧 built — blocked on clinician review + `[VERIFY]` markers |
 | **v1.C** | save my profile + email capture | persist side, PT-prescribed maneuver, angle reference; email capture for the between-episode list | planned |
 
 ## 6. Open questions
 
 - *(append-only log; mark answered with date but never delete)*
-- 2026-09-17 — v1.B (content) vs v1.C (profile/email) first? Open.
+- 2026-09-17 — v1.B (content) vs v1.C (profile/email) first? **Answered 2026-09-17:** v1.B first.
 - 2026-09-17 — `/session` step copy is imperative ("Sit upright and turn your head…"). Does that square with the "never tells anyone to perform a maneuver" positioning in `AI_AGENTS.md`? Open.
 - 2026-09-17 — Email capture needs a backend/provider; site is `output: 'static'` (see `src/lib/server-todo.md`). Which provider? Open.
 - 2026-09-17 — `/history/` is "Discovered – currently not indexed" in GSC (inspection 2026-09-13). It's a per-user localStorage view — should it be `noindex` / dropped from the sitemap? Open.
+- 2026-09-17 — v1.B guides need a named clinician reviewer (‹FILL› banner on each page) and 17 `[VERIFY]` markers resolved before `reviewed: true`. Who reviews? Open.
+- 2026-09-17 — Keyword phrasing for v1.B was chosen from Google autocomplete only; Ahrefs API units were exhausted, so no volume/KD data. Re-check when units reset? Open.
+- 2026-09-17 — `/session` lie-back target is pitch −20° (`src/lib/maneuvers.ts`); references commonly describe ~30° neck extension. Intentional? Open.
+- 2026-09-17 — `PageShell` logo still shows "U" (Unspin leftover); guide pages use "B". Open.
+- 2026-09-17 — `not_found_handling: single-page-application` serves `index.html` with 200 for any unknown path (soft-404s). Switch to `404-page`? Open.

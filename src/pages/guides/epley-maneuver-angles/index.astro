@@ -1,0 +1,163 @@
+---
+import Guide from "../../../layouts/Guide.astro";
+
+const faq = [
+  {
+    q: "Does it have to be exactly 45 degrees?",
+    a: "No one holds an exact angle, and clinicians don't expect it. The 45° turn lines the affected canal up with the direction of the movement that follows, so being roughly there matters much more than being precise to a degree. Being well short of it — turning 20° when you think you turned 45° — is the error that matters.",
+  },
+  {
+    q: "How far should my head hang off the bed?",
+    a: "Descriptions ask for the head to drop back below the level of the body, with the neck extended — commonly described as about 30° [VERIFY]. How far off the edge your shoulders need to be depends on your build and the bed, which is why some instructions put a pillow under the shoulders instead of hanging off the edge [VERIFY]. Follow what your clinician showed you, especially if you have neck problems.",
+  },
+  {
+    q: "What if I can't turn my neck that far?",
+    a: "Limited neck movement is one of the listed reasons the Epley maneuver may not be tolerated. Don't force range you don't have. Tell your clinician — there are alternative maneuvers and assisted versions.",
+  },
+  {
+    q: "Which way do I turn for the left or right ear?",
+    a: "The first turn is toward the side your clinician identified as affected, and each following turn continues away from it. If you don't know your affected side, that is a question for a clinician, not a guide — turning the wrong way does not treat the affected ear.",
+  },
+  {
+    q: "How long do I hold each position?",
+    a: "Clinical descriptions hold each position for at least 30 seconds, and longer if dizziness is still going on — the usual rule is to wait until the spinning from that position has stopped [VERIFY].",
+  },
+];
+
+const sources = [
+  { label: "Nguyen C-T, Basso M. Epley Maneuver. StatPearls (NCBI Bookshelf), updated 2024-09-10.", href: "https://www.ncbi.nlm.nih.gov/books/NBK563287/" },
+  { label: "Bhattacharyya N, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update). Otolaryngol Head Neck Surg. 2017;156(3_suppl):S1–S47.", href: "https://pubmed.ncbi.nlm.nih.gov/28248609/" },
+];
+---
+
+<Guide
+  title="Epley Maneuver Angles: 45°, the Head-Hang, 90° and Roll"
+  description="The four head positions of the Epley maneuver in degrees, why the angles are hard to judge on yourself, and how to check them with your phone."
+  path="/guides/epley-maneuver-angles/"
+  faq={faq}
+  sources={sources}
+>
+  <p class="answer">
+    The standard Epley maneuver uses four head positions: turned <strong>45°</strong> toward the
+    affected ear while sitting, then lying back with the head still turned and tipped back below the
+    body, then turned <strong>90°</strong> to the other side, then rolled with the body so the face
+    points down toward the floor. Each is held for at least 30 seconds.<cite><a href="#src-1">[1]</a></cite>
+    The hard part at home is not remembering the sequence — it's knowing whether you actually reached
+    those angles.
+  </p>
+
+  <h2>The four positions, in degrees</h2>
+  <p>
+    This is the geometry as clinical references describe it, for the posterior-canal form of BPPV. If
+    your clinician taught you a variation, theirs is the one to follow.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Position</th><th>Head angle</th><th>Hold</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Sitting</td>
+        <td>Turned 45° toward the affected ear<cite><a href="#src-1">[1]</a></cite></td>
+        <td>Brief — this is the setup</td>
+      </tr>
+      <tr>
+        <td>2. Lying back</td>
+        <td>Still turned 45°; neck extended so the head is below the body, commonly given as about 30° <mark>[VERIFY]</mark></td>
+        <td>≥ 30 s<cite><a href="#src-1">[1]</a></cite></td>
+      </tr>
+      <tr>
+        <td>3. Turned across</td>
+        <td>Rotated 90° to the other side, keeping the head tipped back<cite><a href="#src-1">[1]</a></cite></td>
+        <td>≥ 30 s</td>
+      </tr>
+      <tr>
+        <td>4. Rolled</td>
+        <td>Body rolls onto that side; head keeps turning so it faces about 135° from straight up — nose angled toward the floor<cite><a href="#src-1">[1]</a></cite></td>
+        <td>≥ 30 s</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Then you sit up slowly. The angles add up: 45° in position 1, 90° more in position 3, and another
+    roughly 90° as you roll in position 4. Each step builds on the one before, so an error in the
+    first turn carries through every later position.
+  </p>
+
+  <h2>Why 45° is harder to hit than it sounds</h2>
+  <p>
+    The maneuver works by moving loose crystals (otoconia) through one of the inner ear's canals and back out
+    into the part of the ear where they don't cause vertigo. The 45° turn lines the posterior canal up with the
+    direction of the lying-back movement. Turn too little and the movement isn't lined up with the canal,
+    so the crystals don't travel the way they need to.
+  </p>
+  <p>Three things make the angle hard to judge on yourself:</p>
+  <ul>
+    <li>
+      <strong>You can't see your own head.</strong> A video shows someone else's angle. Your only reference is how
+      it feels, and people rarely know how far they've actually turned their neck.
+    </li>
+    <li>
+      <strong>Dizziness makes people stop short.</strong> Positions 2 and 3 are meant to bring on
+      spinning in an affected ear. The natural response is to ease off the angle that's making you
+      dizzy — and that angle is the one the maneuver needs.
+    </li>
+    <li>
+      <strong>Turning and tipping interfere.</strong> Lying back tends to straighten the head out of
+      the 45° turn. Rolling in position 4 tends to leave the head behind the shoulders. Each is one
+      axis quietly drifting while you concentrate on the other.
+    </li>
+  </ul>
+
+  <h2>Checking the angles with a phone</h2>
+  <p>
+    A phone held flat against your forehead moves exactly as your head moves, and its motion sensors
+    report orientation continuously. BPPVCoach uses that to answer one question during each position:
+    <em>is your head where the reference position says it should be?</em>
+  </p>
+  <div class="callout">
+    <p style="margin-top:0">
+      You set a neutral reference first — sitting upright, facing forward. The phone then tracks two
+      axes: how far your head is tipped back or forward, and how far it's tilted toward one ear. Once
+      you're lying down, the 45° and 90° turns show up on that second axis. Each lying position shows
+      green when both axes are inside a set tolerance (±12° for positions 2 and 3, a little wider for
+      the roll), and a 30-second timer runs while you hold it. The sitting turn itself isn't measured.
+      It doesn't diagnose anything, choose the ear, or decide whether you should do the maneuver — it
+      only measures the angles.
+    </p>
+    <p><a href="/session/">Start a guided session</a> · <a href="/how-it-works/">How the measurement works</a></p>
+  </div>
+
+  <h2>Examples</h2>
+  <h3>The turn that felt like 45°</h3>
+  <p>
+    A typical case: someone turns toward their affected ear until it feels like a proper turn and
+    lies back. In position 2 the indicator stays yellow — the head has rolled back toward
+    face-up, so the turn is well short of the target. They turn further, the indicator goes green,
+    and they hold it there instead of holding the shallower angle that felt right. <em>(This is an
+    illustration of the pattern, not a measured result.)</em>
+  </p>
+  <h3>Losing the tilt in position 3</h3>
+  <p>
+    Turning the head 90° while lying flat is awkward, and the easy way to do it is to lift the chin
+    back up to level. The rotation is then right but the head is no longer tipped back. A two-axis
+    reading shows the rotation in range and the tilt out of range, which a mirror or video wouldn't.
+  </p>
+  <h3>When the angles were right and it still didn't work</h3>
+  <p>
+    Getting every position green doesn't guarantee a result. The maneuver treats posterior-canal
+    BPPV. Other canals need different maneuvers, and other causes of dizziness aren't helped by
+    repositioning at all. If you've done it carefully and nothing changes, the next step is a
+    clinician, not more repetitions — see <a href="/guides/did-the-epley-maneuver-work/">how to tell
+    whether it worked</a>.
+  </p>
+
+  <h2>Before you use any angle reference</h2>
+  <ul>
+    <li>Use the side your clinician identified. Guessing it from which side feels dizzier isn't reliable.</li>
+    <li>Have someone with you if you can, and a bed or surface where you can lie back safely.</li>
+    <li>Neck problems (cervical stenosis, limited neck mobility) are a reason to check with a clinician first.<cite><a href="#src-1">[1]</a></cite></li>
+    <li>Nausea is the most common side effect.<cite><a href="#src-1">[1]</a></cite> Sit up slowly at the end.</li>
+    <li>The US clinical guideline recommends against restricting your posture after the maneuver (such as sleeping upright).<cite><a href="#src-2">[2]</a></cite></li>
+  </ul>
+</Guide>
